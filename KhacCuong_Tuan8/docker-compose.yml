@@ -1,0 +1,51 @@
+version: '3'
+services:
+  product-service:
+    build: ./product-service
+    ports:
+      - "3001:3001"
+    depends_on:
+      - product-db
+
+  order-service:
+    build: ./order-service
+    ports:
+      - "3002:3002"
+    depends_on:
+      - order-db
+
+  customer-service:
+    build: ./customer-service
+    ports:
+      - "3003:3003"
+    depends_on:
+      - customer-db
+
+  api-gateway:
+    build: ./api-gateway
+    ports:
+      - "3000:3000"
+    depends_on:
+      - product-service
+      - order-service
+      - customer-service
+
+  product-db:
+    image: mongo
+    volumes:
+      - product-data:/data/db
+
+  order-db:
+    image: mongo
+    volumes:
+      - order-data:/data/db
+
+  customer-db:
+    image: mongo
+    volumes:
+      - customer-data:/data/db
+
+volumes:
+  product-data:
+  order-data:
+  customer-data:

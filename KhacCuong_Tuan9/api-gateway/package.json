@@ -1,0 +1,16 @@
+{
+  "name": "api-gateway",
+  "version": "1.0.0",
+  "description": "API Gateway for microservices",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "axios": "^0.21.4",
+    "axios-retry": "^4.5.0",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "opossum": "^8.4.0"
+  }
+}
