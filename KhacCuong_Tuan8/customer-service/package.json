@@ -1,0 +1,20 @@
+{
+  "name": "customer-service",
+  "version": "1.0.0",
+  "description": "Microservice for managing customers",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.9.7",
+    "axios": "^0.21.1"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": "16.x"
+  },
+  "author": "",
+  "license": "ISC"
+}
